@@ -144,11 +144,12 @@ Wait **2 seconds** between each section request, then read the title.
 
 ### 3c. Cookies, Banner, and Network Data
 
-Use the helper script at `/Users/tdang/www/gpp/scripts/gpp-adtech-collect.js`:
+Use the helper script bundled with this skill at `scripts/gpp-adtech-collect.js` (relative to this SKILL.md):
 
 ```bash
 # Read the JS file and escape for AppleScript
-JS_CODE=$(cat /Users/tdang/www/gpp/scripts/gpp-adtech-collect.js | sed 's/\\/\\\\/g' | sed 's/"/\\"/g')
+SKILL_DIR="$(dirname "$(find ~/.claude/skills/gpp-adtech-test -name SKILL.md)")"
+JS_CODE=$(cat "$SKILL_DIR/scripts/gpp-adtech-collect.js" | sed 's/\\/\\\\/g' | sed 's/"/\\"/g')
 
 osascript -e "
 tell application \"Google Chrome\"
@@ -403,7 +404,7 @@ From testing inquirer.com (these may vary by site):
 
 ## Phase 5: Generate Report
 
-Save a markdown report to: `/Users/tdang/www/gpp/<domain>-gpp-adtech-test-<date>.md`
+Save a markdown report to the current working directory: `./<domain>-gpp-adtech-test-<date>.md`
 
 Extract the domain from the URL (e.g., `www.inquirer.com` → `inquirer`).
 
@@ -574,7 +575,7 @@ Test results vary significantly by visitor geolocation:
 
 ## Notes
 
-- The helper script at `/Users/tdang/www/gpp/scripts/gpp-adtech-collect.js` handles all DOM-accessible data collection in a single injection
+- The helper script at `scripts/gpp-adtech-collect.js` (bundled with this skill) handles all DOM-accessible data collection in a single injection
 - GPP state (ping, sections) MUST be collected separately via postMessage since `window.__gpp` is not accessible from the isolated world
 - Run each AppleScript step sequentially with appropriate waits between them
 - Save all raw JSON data in case manual analysis is needed later

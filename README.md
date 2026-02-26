@@ -8,6 +8,7 @@ Internal AI skills for Inquirer engineering teams, built for use with [Claude Co
 |-------|-------------|
 | `/gpp-adtech-test` | Test GPP privacy signal integration on a website — checks CMP state, cookies, and ad partner network requests |
 | `/gpp-audit-compare` | Compare GPP string implementations across multiple news sites — CMP provider, opt-out posture, MSPA fields, and cookie architecture |
+| `/sophi-health-check` | Run a Sophi 2.0 Phase 1 health check on an Inquirer article — SDK loading, Demeter, consent, decisions/me, dataLayer, Piano, and paywall decision logic |
 
 ---
 
@@ -61,7 +62,9 @@ Arguments are passed directly after the skill name. Each skill's `SKILL.md` docu
 .claude/skills/
 ├── gpp-adtech-test/
 │   └── SKILL.md
-└── gpp-audit-compare/
+├── gpp-audit-compare/
+│   └── SKILL.md
+└── sophi-health-check/
     └── SKILL.md
 ```
 

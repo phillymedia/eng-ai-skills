@@ -282,7 +282,7 @@ Key fields to highlight in comparison:
 
 ## Phase 6: Generate Comparison Report
 
-Save markdown to: `/Users/tdang/www/gpp/gpp-audit-compare-<YYYY-MM-DD>.md`
+Save markdown to the current working directory: `./gpp-audit-compare-<YYYY-MM-DD>.md`
 
 ### Report Template
 
