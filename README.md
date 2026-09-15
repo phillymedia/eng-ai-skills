@@ -67,7 +67,7 @@ Arguments are passed directly after the skill name. Each skill's `SKILL.md` docu
 │   └── SKILL.md
 ├── sophi-health-check/
 │   └── SKILL.md
-└── jira-ac/
+└── jira-ac-planner/
     └── SKILL.md
 ```
 
